@@ -14,7 +14,7 @@
         <module>HR_Module</module>
         <module>Finanace_Module</module>
         <module>IT_Module</module>
-        <module>Shared_Module</module>
+        <module>Share_Modulee</module>
     </modules>
 
 
@@ -25,6 +25,17 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.13.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.13.0</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/junit/junit -->
@@ -58,13 +69,6 @@
             <version>3.4.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
         <dependency>
             <groupId>org.jacoco</groupId>
@@ -80,8 +84,8 @@
         </dependency>
 
 
-    </dependencies>
 
+    </dependencies>
 
 
     <profiles>
@@ -133,32 +137,6 @@
             </configuration>
         </plugin>
 
-
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.3.0</version>
-                <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <archive>
-                        <manifest>
-                            <mainClass>com.demo.nec.Operation</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
